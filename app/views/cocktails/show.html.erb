@@ -1,5 +1,12 @@
 <h1><%= @cocktail.name %></h1>
 
+
+<%= simple_form_for [@cocktail] do |f| %>
+  <%= f.input :picture_url %>
+  <%= f.submit "Edit the picture", class: "btn btn-primary" %>
+<% end %>
+
+
 <p>Doses: </p>
 
 <ul>
