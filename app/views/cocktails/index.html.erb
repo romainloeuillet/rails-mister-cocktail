@@ -2,8 +2,9 @@
 
 <div class="card-container">
   <% @cocktails.each do |cocktail| %>
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cocktail.picture_url %>);">
-          <h2><%= link_to cocktail.name, cocktail_path(cocktail.id) %></h2>
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>);">
+        <h1><%= cocktail.name %></h1>
+          <h2><%= link_to "", cocktail_path(cocktail.id) %></h2>
       </div>
   <% end %>
 </div>

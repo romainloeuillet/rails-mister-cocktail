@@ -1,8 +1,9 @@
-<h1> Add a dose </h1>
+<div class="card-container">
 
-<%= simple_form_for [@cocktail, @dose] do |f| %>
-  <%= f.input :description %>
-  <%= f.association :ingredient %>
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
+    <%= f.input :description %>
+    <%= f.association :ingredient %>
 
-  <%= f.submit "Add a dose", class: "btn btn-primary" %>
-<% end %>
+    <%= f.submit "Add a dose", class: "btn btn-primary" %>
+  <% end %>
+</div>

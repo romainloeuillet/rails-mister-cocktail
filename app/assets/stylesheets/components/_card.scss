@@ -6,28 +6,42 @@
 }
 
 .card {
-  height: 200px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  height: 250px;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
   position: relative;
-  width: 200px;
+  border-radius: 2px;
+  width: 250px;
   margin: 20px;
-  a {
   color: white;
-  }
-}
-
-.card-link {
+  text-align: center;
+  text-align: middle;
+  a {
   position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
   width: 100%;
   z-index: 2;
-  background: black;
-  opacity: 0;
+  }
 }
-.card-link:hover {
+
+.card:hover {
   opacity: 0.1;
+}
+
+
+.big-card {
+  height: 600px;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  border-radius: 2px;
+  width: 600px;
+  margin: 20px;
+  color: white;
+  text-align: center;
+  text-align: middle;
+  background-color: black;
 }

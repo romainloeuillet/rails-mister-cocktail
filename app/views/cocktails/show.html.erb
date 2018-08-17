@@ -1,24 +1,21 @@
-<h1><%= @cocktail.name %></h1>
+<div class="card-container">
+  <div class="big-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path @cocktail.photo, height: 300, width: 400, crop: :fill %>);">
+        <h1><%= @cocktail.name %></h1>
+  </div>
+  <div>
+    <p>Doses: </p>
+    <ul>
+      <% @cocktail.doses.each do |dose| %>
+        <li><%= dose.ingredient.name %> : <%= dose.description %> <%= link_to "", dose_path(dose), method: :delete, class: "fas fa-trash-alt", data: { confirm: "Are you sure?" } %></li>
+      <% end %>
+    </ul>
+    <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
+  </div>
+</div>
 
 
-<%= simple_form_for [@cocktail] do |f| %>
-  <%= f.input :picture_url %>
-  <%= f.submit "Edit the picture", class: "btn btn-primary" %>
-<% end %>
 
 
-<p>Doses: </p>
-
-<ul>
-  <% @cocktail.doses.each do |dose| %>
-    <li><%= dose.ingredient.name %> : <%= dose.description %> <%= link_to "", dose_path(dose), method: :delete, class: "fas fa-trash-alt", data: { confirm: "Are you sure?" } %></li>
-  <% end %>
-</ul>
-
-
-<%= link_to "Back to cocktails", cocktails_path, class: "btn btn-primary" %>
-
-<%= link_to "Add a dose", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
 
 
 
